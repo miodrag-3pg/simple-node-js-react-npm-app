@@ -6,3 +6,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 });
+
+it('should fail', () => {
+  expect(1 + 2).toEqual(5);
+});
