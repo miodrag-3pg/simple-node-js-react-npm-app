@@ -44,6 +44,6 @@
 
     ////////// ECMAScript 6 //////////
 
-    "no-var": 1,          // require let or const instead of var (off by default)
+    "no-var": 2,          // require let or const instead of var (off by default)
    }
 }
