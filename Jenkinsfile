@@ -11,21 +11,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo '1 --> BUILD'
                 sh 'npm install'
             }
         }
         stage('Lint') {
             steps {
+                echo '2 --> LINT'
                 sh './jenkins/scripts/lint.sh'
             }
         }
         stage('Test') {
             steps {
+                echo '3 --> TEST'
                 sh './jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') { 
             steps {
+                echo '4 --> DELIVER'
                 sh './jenkins/scripts/deliver.sh' 
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
                 sh './jenkins/scripts/kill.sh' 
